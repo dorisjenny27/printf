@@ -31,3 +31,36 @@ int _printf(const char *format, ...)
                     // Example: printf("Hello %c", 'M'); // Output: A //TECNO CAMON A33 //OPPO 
                     break;
                    }
+
+              case 's':
+                {
+                  char *p = va_arg(data, char*);
+                  // for (int y = 0; p[y] != '\0'; y++)
+                  //   {
+                  //     _putchar(p[y]);
+                  //   }
+                  //*str = *p = address of
+                  count = count + _putstr(&p);
+                  break;
+                }
+            
+              case '%':
+                {
+                  _putchar('%');
+                  count = count + 1;
+                  break;
+                }
+
+              // case 'd':
+              //   {
+              //     va_arg(data, int);
+              //       _putchar(8  );
+              //       //_printf("%d", 897);
+              //   }
+              // Other cases for different format specifiers (e.g., '%d', '%s', etc.) are expected to be added here.
+          }
+      }
+  }
+
+  return (count);
+}
